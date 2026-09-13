@@ -1,0 +1,14 @@
+[Unit]
+Description=TrackPoint as a scroll-only nub (buttons passed through)
+After=systemd-udevd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/trackpoint-scroll.py
+# Environment=TRACKPOINT_SCROLL_GAIN=6
+# Environment=TRACKPOINT_SCROLL_NATURAL=1
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
