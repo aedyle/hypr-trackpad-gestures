@@ -9,12 +9,18 @@ hl.gesture({ fingers = 3, direction = "swipe", action = "move" })
 -- Four fingers sideways: switch workspaces, macOS style.
 hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
 
+-- Super held + three fingers: resize the active window, each axis on its own.
+-- Sideways finger travel changes width, vertical travel changes height, 1:1.
+-- (A pinch can't do this: libinput reports a pinch as a single scale value.)
+hl.gesture({ fingers = 3, direction = "swipe", mods = "SUPER", action = "resize" })
+
 -- Fallback for trackpads that only track three fingers (see check-touchpad.py).
--- Comment out the two gestures above and uncomment these two. They must not
+-- Comment out the three gestures above and uncomment these three. They must not
 -- overlap: a plain three-finger swipe in any direction would swallow a
 -- three-finger sideways swipe, so the window move takes a Super modifier.
 -- hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 -- hl.gesture({ fingers = 3, direction = "swipe", mods = "SUPER", action = "move" })
+-- hl.gesture({ fingers = 3, direction = "swipe", mods = "SUPER SHIFT", action = "resize" })
 
 -- Optional extras. Uncomment what you want.
 -- Two-finger pinch zooms the screen around the cursor, live.
