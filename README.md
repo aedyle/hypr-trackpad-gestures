@@ -49,24 +49,6 @@ Prefer to do it by hand? Paste the two `hl.gesture` lines into `~/.config/hypr/i
 - **Taps and edge swipes are not possible this way.** Hyprland only receives swipe and pinch events. For multi-finger taps or corner gestures you need a raw-evdev tool such as [edgepad](https://github.com/assembledev/edgepad) or [syngesture](https://github.com/mqudsi/syngesture).
 - **Mission Control style overview** needs a Hyprland plugin. Active options in late 2026: [sandwichfarm/hyprexpo](https://github.com/sandwichfarm/hyprexpo), [hymission](https://github.com/gfhdhytghd/hymission), [hyprview](https://github.com/yz778/hyprview). All bind to a four-finger swipe up through the same `hl.gesture` mechanism.
 
-## Optional: TrackPoint as a scroll nub
-
-If your laptop has a TrackPoint (the red nub) you never use as a pointer, `trackpoint/` turns it into a scroll wheel. A small Python daemon grabs the nub exclusively, so it stops moving the pointer, and re-emits its motion as vertical and horizontal scrolling through a virtual mouse. The physical buttons above the touchpad belong to the TrackPoint device, so the daemon passes them through and they keep working as normal mouse buttons. The touchpad is untouched.
-
-```bash
-bash trackpoint/install.sh
-```
-
-That installs `python-evdev` if missing, copies the script to `/usr/local/bin`, and enables a system service `trackpoint-scroll`. Push the nub: the page should scroll, and the pointer should stay put.
-
-Tuning goes in the service file as environment variables: `TRACKPOINT_SCROLL_GAIN` (default 6, higher scrolls faster) and `TRACKPOINT_SCROLL_NATURAL=1` to reverse the direction. After editing, run `sudo systemctl daemon-reload && sudo systemctl restart trackpoint-scroll`.
-
-Undo at any time, nothing else changes:
-
-```bash
-sudo systemctl disable --now trackpoint-scroll
-```
-
 ## Undo
 
 ```bash
