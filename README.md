@@ -62,3 +62,7 @@ Then remove the `require("hypr.gestures")` line from `~/.config/hypr/hyprland.lu
 Full gesture syntax, directions, actions and live-gesture callbacks: <https://wiki.hypr.land/Configuring/Advanced-and-Cool/Gestures/>
 
 Tested on Omarchy 4.0.2, Hyprland 0.56.2, libinput 1.31, ThinkPad E14 Gen 6 (Synaptics SYNA8020 clickpad), September 2026.
+
+## Licence
+
+MIT. See `LICENSE`.
