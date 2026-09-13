@@ -7,8 +7,10 @@ macOS-style trackpad gestures for [Omarchy](https://omarchy.org/) (Hyprland 0.55
 | Three-finger swipe, any direction | Moves the active window around the screen, 1:1 with your fingers |
 | Four-finger swipe left or right | Switches workspaces, with the live slide animation |
 | Super held + three-finger swipe | Resizes the active window, width and height following your fingers independently |
+| Four-finger swipe up | Fullscreens the active window |
+| Four-finger swipe down | Leaves fullscreen |
 
-Extras (two-finger pinch zoom, three-finger fullscreen/close, four-finger pinch to open the launcher) are in `gestures.lua`, commented out.
+Extras (two-finger pinch zoom, Super plus three-finger swipe down to close, four-finger pinch to open the launcher) are in `gestures.lua`, commented out.
 
 ## Will it work on my laptop?
 
@@ -24,7 +26,7 @@ Example output from a ThinkPad E14 Gen 6:
 SYNA8020:00 06CB:CE5C Touchpad (/dev/input/event13): tracks 5 fingers, 112 mm x 53 mm. OK for 3- and 4-finger gestures.
 ```
 
-If it says fewer than four fingers, the four-finger workspace swipe will not fire. Do not simply change it to three fingers: it would then overlap the three-finger window move, and Hyprland would fire whichever matched first. Use the three-finger fallback in `gestures.lua` instead. It gives workspaces to a plain three-finger sideways swipe and moves windows with Super held plus three fingers, which mirrors Super+drag. Resize moves to Super Shift plus three fingers.
+If it says fewer than four fingers, the four-finger workspace swipe will not fire. Do not simply change it to three fingers: it would then overlap the three-finger window move, and Hyprland would fire whichever matched first. Use the three-finger fallback in `gestures.lua` instead. It gives workspaces to a plain three-finger sideways swipe and moves windows with Super held plus three fingers, which mirrors Super+drag. Resize moves to Super Shift plus three fingers, and fullscreen to Super plus three fingers up or down.
 
 ## Install
 
