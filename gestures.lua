@@ -9,6 +9,13 @@ hl.gesture({ fingers = 3, direction = "swipe", action = "move" })
 -- Four fingers sideways: switch workspaces, macOS style.
 hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
 
+-- Fallback for trackpads that only track three fingers (see check-touchpad.py).
+-- Comment out the two gestures above and uncomment these two. They must not
+-- overlap: a plain three-finger swipe in any direction would swallow a
+-- three-finger sideways swipe, so the window move takes a Super modifier.
+-- hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+-- hl.gesture({ fingers = 3, direction = "swipe", mods = "SUPER", action = "move" })
+
 -- Optional extras. Uncomment what you want.
 -- Two-finger pinch zooms the screen around the cursor, live.
 -- hl.gesture({ fingers = 2, direction = "pinch", action = "cursor_zoom", zoom_level = 1, mode = "live" })

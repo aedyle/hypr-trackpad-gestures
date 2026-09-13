@@ -23,7 +23,7 @@ Example output from a ThinkPad E14 Gen 6:
 SYNA8020:00 06CB:CE5C Touchpad (/dev/input/event13): tracks 5 fingers, 112 mm x 53 mm. OK for 3- and 4-finger gestures.
 ```
 
-If it says fewer than four fingers, the four-finger workspace swipe will not fire. Change `fingers = 4` to `3` for the workspace gesture and pick a different finger count or direction for window moving.
+If it says fewer than four fingers, the four-finger workspace swipe will not fire. Do not simply change it to three fingers: it would then overlap the three-finger window move, and Hyprland would fire whichever matched first. Use the three-finger fallback in `gestures.lua` instead. It gives workspaces to a plain three-finger sideways swipe and moves windows with Super held plus three fingers, which mirrors Super+drag.
 
 ## Install
 
