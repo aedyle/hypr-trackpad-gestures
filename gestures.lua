@@ -6,7 +6,7 @@
 -- Tiled windows drag through the layout; floating windows move freely.
 hl.gesture({ fingers = 3, direction = "swipe", action = "move" })
 
--- Four fingers sideways: switch workspaces, macOS style.
+-- Four fingers sideways: switch workspaces.
 hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
 
 -- Super held + three fingers: resize the active window, each axis on its own.

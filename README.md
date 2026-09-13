@@ -1,6 +1,6 @@
 # hypr-trackpad-gestures
 
-macOS-style trackpad gestures for [Omarchy](https://omarchy.org/) (Hyprland 0.55+ with the Lua config). No daemons, no plugins. Two lines of native Hyprland config, plus a script to check your trackpad first.
+Nifty trackpad gestures for [Omarchy](https://omarchy.org/) (Hyprland 0.55+ with the Lua config). No daemons, no plugins. Five lines of native Hyprland config, plus a script to check your trackpad first.
 
 | Gesture | What it does |
 |---|---|
